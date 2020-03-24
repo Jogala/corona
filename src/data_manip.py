@@ -10,8 +10,6 @@ import os
 
 def load_data_cases(path_data_root,name_file):
     
-    path_data_root = '/custom/corona/data_ECDC/data'
-    name_file = 'COVID-19-geographic-disbtribution-worldwide-2020-03-21.xlsx'
     path_data = path_data_root + '/' + name_file
     
     name_file_mod = name_file.split('.')[0] + '_mod_' + '.csv'
