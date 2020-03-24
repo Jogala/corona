@@ -58,7 +58,7 @@ def generate_plot_cumulated_cases(df,countries,yscale):
     }
     return figure
 
-port = 8050
+port = 80
 path_data_root = '/custom/corona/data_ECDC/data'
 name_file = 'COVID-19-geographic-disbtribution-worldwide-2020-03-24.xlsx'
 path_data = path_data_root + '/' + name_file
@@ -93,7 +93,7 @@ markdown_text = '''
 
 Data taken from [ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide).
 Last data pulled 24.03.2020 20:17 (GMT+1 / Berlin)
-
+Do you want to add or change stuff or make suggestions: https://github.com/Jogala/corona
 '''
 
 options_countries = [{'label' : country, 'value' : country} for country in df.country.unique()]
@@ -139,6 +139,6 @@ def update_plot_cases_cumulated_upon_button_update_plot_pressed(n_clicks, _, cou
 
 print('__name__: ',__name__)
 if __name__ == '__main__':
-    app.run_server(host= '0.0.0.0', port=port,debug=True,dev_tools_hot_reload_max_retry=3000)
+    app.run_server(host= '0.0.0.0', port=port,debug=False,dev_tools_hot_reload_max_retry=3000)
     
 
