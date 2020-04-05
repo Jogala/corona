@@ -18,7 +18,7 @@ def load_data_cases(path_data_root,name_file):
     if(not os.path.isdir(path_data_mod)):
         
         df = pd.read_excel(path_data)
-        df.rename(columns={'Cases': 'new_cases','Countries and territories':'country','DateRep':'date'},inplace=True)
+        df.rename(columns={'cases': 'new_cases','countriesAndTerritories':'country','dateRep':'date'},inplace=True)
         df = df.sort_values(by=['country','date'],ascending=[True,True])
         df['cases_cumulative'] = df.groupby('country')['new_cases'].cumsum()
         df = df.sort_values(by=['country','date'],ascending=[True,False])

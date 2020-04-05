@@ -48,7 +48,7 @@ def generate_plot_cumulated_cases(df,countries,yscale):
     
     'layout': dict(
         xaxis={'type': 'linear', 'title': 'Time'},
-        yaxis={'type': yscale, 'title': 'Cumulated Cases'},
+        yaxis={'type': yscale, 'title': 'Cumulativ Cases'},
         height= 700,
         width = 700,
         margin={'l': 100, 'b': 100, 't': 20, 'r': 100},
@@ -60,7 +60,7 @@ def generate_plot_cumulated_cases(df,countries,yscale):
 
 port = 80
 path_data_root = '/custom/corona/data_ECDC/data'
-name_file = 'COVID-19-geographic-disbtribution-worldwide-2020-03-24.xlsx'
+name_file = 'COVID-19-geographic-disbtribution-worldwide-2020-03-31.xlsx'
 path_data = path_data_root + '/' + name_file
 df = dm.load_data_cases(path_data_root,name_file)
     
@@ -92,7 +92,7 @@ markdown_text = '''
 # Overview over covid 19 cases
 
 Data taken from [ECDC](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide).
-Last data pulled 24.03.2020 20:17 (GMT+1 / Berlin)
+Last data pulled 31.3.2020 23:30 (GMT+1 / Berlin)
 Do you want to add or change stuff or make suggestions: https://github.com/Jogala/corona
 '''
 
@@ -102,7 +102,7 @@ default_countries_drop_down = ['Germany', 'Italy','United_States_of_America','Un
 app.layout = html.Div(children=[
 
     dcc.Markdown(children=markdown_text),
-    dcc.Markdown(children='## Cumulated Cases'),
+    dcc.Markdown(children='## Cumulativ Cases'),
     
     html.Label('Select countries:'),
     
